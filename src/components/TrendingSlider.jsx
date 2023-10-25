@@ -2,6 +2,7 @@ import "./TrendingSlider.css";
 import TrendingItem from "./TrendingItem";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 
+
 function TrendingSlider() {
   const slideLeft = () => {
     let slider = document.getElementById("slider");
@@ -12,6 +13,7 @@ function TrendingSlider() {
     let slider = document.getElementById("slider");
     slider.scrollLeft = slider.scrollLeft + 235;
   };
+
 
   return (
     <div className="trending">

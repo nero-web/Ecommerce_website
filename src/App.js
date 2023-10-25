@@ -1,7 +1,7 @@
 /** @format */
 
 import Navbar from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Router } from "react-router-dom";
 import Home from "./pages/Home";
 import "./index.css";
 import Categories from "./pages/Categories";
@@ -38,7 +38,7 @@ function App() {
   }, [cartItem]);
 
   return (
-    <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
+      <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
       <Navbar />
       <Routes>
         <Route index path='/' element={<Home />} />

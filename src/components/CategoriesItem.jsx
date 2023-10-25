@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { items } from "./AllData";
+import { useEffect } from "react";
 
 function CategoriesItem() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="proud-container">
@@ -10,7 +14,6 @@ function CategoriesItem() {
             {items.map((item) => (
               <div key={item.id} className="product normal">
                 <Link
-                  onClick={() => window.top(0, 0)}
                   to={`/categories/product/${item.id}`}
                 >
                   <div className="product-header">
