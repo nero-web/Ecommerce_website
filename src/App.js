@@ -39,7 +39,6 @@ function App() {
 
   return (
       <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
-      
       <Navbar />
       <Routes>
         <Route index path='/' element={<Home />} />
@@ -58,7 +57,6 @@ function App() {
         <Route path="categories/product/:id" element={<ProductPage />} />
         <Route path="*" element={<Home to="/" />} />
       </Routes>
-      
     </CartContext.Provider>
   );
 }
