@@ -1,7 +1,7 @@
 /** @format */
 
 import Navbar from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import "./index.css";
 import Categories from "./pages/Categories";
@@ -39,12 +39,10 @@ function App() {
 
 
   return (
-      <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
-        
+        <CartContext.Provider value={{ cartItem, addToCart, setCartItem }}>
       <Navbar />
       <Routes>
         <Route index path='/' element={<Home />} />
-
         <Route path='categories' element={<Categories />}>
           <Route path='all' element={<All />} />
           <Route path='furnitures' element={<Furnitures />} />
@@ -54,7 +52,6 @@ function App() {
           <Route path='chairs' element={<Chairs />} />
           <Route path='skin-care' element={<SkinCare />} />
         </Route>
-
         <Route path='/contactus' element={<ContactUs />}/>
         <Route path="categories/product/:id" element={<ProductPage />} />
         <Route path="*" element={<Home to="/" />} />
