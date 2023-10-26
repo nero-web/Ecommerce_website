@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <script>
-    // Define the routes and their corresponding URLs
-    const routes = {
-      '/': '/index.html',
-      '/categories/all': '/index.html#/categories/all',
-      '/categories/furnitures': '/index.html#/categories/furnitures',
-      '/categories/electronics': '/index.html#/categories/electronics',
-      '/categories/lamps': '/index.html#/categories/lamps',
-      '/categories/kitchen': '/index.html#/categories/kitchen',
-      '/categories/chairs': '/index.html#/categories/chairs',
-      '/categories/skin-care': '/index.html#/categories/skin-care',
-      '/categories/product/:id': '/index.html#', // Handle product pages separately
-      '/contactus': '/index.html#/contactus'
-    };
+  <head>
+    <meta charset="utf-8">
+    <title>Ecommerce Website</title>
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 1;
 
-    // Get the current URL and check if it's in the routes object
-    const currentURL = window.location.pathname;
-    if (routes[currentURL]) {
-      // If the route exists, redirect to the corresponding route in your app
-      window.location.href = routes[currentURL];
-    } else if (currentURL.includes('/categories/product/')) {
-      // Handle product pages by redirecting to the product listing
-      const productRoute = currentURL.replace('/categories/product/', '');
-      window.location.href = `/index.html#/categories/product/${productRoute}`;
-    } else {
-      // If the route doesn't exist, redirect to the homepage
-      window.location.href = '/index.html';
-    }
-  </script>
-</head>
-<body>
-</body>
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, 'and') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, 'and') : '') +
+        l.hash
+      );
+
+    </script>
+  </head>
+  <body>
+  </body>
 </html>
