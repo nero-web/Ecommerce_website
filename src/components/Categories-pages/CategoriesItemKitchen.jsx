@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { items } from "../AllData";
+import { useEffect } from "react";
 
 function CategoriesItem() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const filteredItems = items.filter((item) => item.category === "kitchen");
   return (
     <>
