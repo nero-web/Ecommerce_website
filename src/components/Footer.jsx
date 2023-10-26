@@ -20,7 +20,7 @@ function Footer() {
             style={{ color: "white" }}
             href="https://github.com/saadelmasrour"
           >
-            &nbsp; El masrour
+            &nbsp; El Masrour
           </a>
         </p>
       </footer>

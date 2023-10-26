@@ -251,6 +251,7 @@
     .product-big-name {
         width: 31rem;
         text-align: center;
+        top: -45px;
     }
 }
 
